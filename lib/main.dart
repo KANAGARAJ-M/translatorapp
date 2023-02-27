@@ -446,7 +446,6 @@ class _HomePageState extends State<HomePage> {
                         color: Color.fromARGB(255, 33, 192, 2), fontSize: 20))),
 
             const SizedBox(
-              
               height: 40,
               // child: InkWell(
               //       onTap:() => NewMemory(),
@@ -456,7 +455,6 @@ class _HomePageState extends State<HomePage> {
                 child: Text('Try Full version',
                     style: TextStyle(
                         color: Color.fromARGB(255, 33, 192, 2), fontSize: 20))),
-            
           ],
         ),
       ),
