@@ -17,8 +17,7 @@ class _HomePageState extends State<HomePage> {
   String dropdownTo = "Nepali";
   String userinput = "";
   String result = "";
-  // This is made by Bishworaj Poudel for FlutterHope.com
-  // https://www.flutterhope.com/
+  
   // If you want to add your country in the list, just add the code in the list.
   // Country Code List: https://cloud.google.com/translate/docs/languages
   //
@@ -28,9 +27,24 @@ class _HomePageState extends State<HomePage> {
     'Japnease',
     'Korean',
     'Afrikaans',
-    'Albanian'
+    'Albanian',
+    'Amharic',
+    'Arabic',
+    'Armenian',
+    'Assamese'
   ];
-  List<String> languageCode = <String>['en', 'ne', 'ja', 'ko', 'af', 'sq'];
+  List<String> languageCode = <String>[
+    'en',
+    'ne',
+    'ja',
+    'ko',
+    'af',
+    'sq',
+    'am',
+    'ar',
+    'hy',
+    'as'
+  ];
 //Translate
   resultTranslate() async {
     final translator = GoogleTranslator();
