@@ -21,19 +21,32 @@ class _HomePageState extends State<HomePage> {
   // https://www.flutterhope.com/
   // If you want to add your country in the list, just add the code in the list.
   // Country Code List: https://cloud.google.com/translate/docs/languages
-  // 
- List <String> availableLang =  <String>['English', 'Nepali', 'Japnease', 'Korean'];
- List <String> languageCode =  <String>['en', 'ne', 'ja', 'ko'];
+  //
+  List<String> availableLang = <String>[
+    'English',
+    'Nepali',
+    'Japnease',
+    'Korean',
+    'Afrikaans',
+    'Albanian'
+  ];
+  List<String> languageCode = <String>['en', 'ne', 'ja', 'ko', 'af', 'sq'];
 //Translate
-resultTranslate() async {
-  final translator = GoogleTranslator();
-  translator.translate(userinput, from: languageCode[availableLang.indexOf(dropdownFrom)], to: languageCode[availableLang.indexOf(dropdownTo)]).then(print);
-  var translation = await translator.translate(userinput, to: languageCode[availableLang.indexOf(dropdownTo)]);
-  setState(() {
-    result = translation.text;
-  });
-  // prints exemplo
-}
+  resultTranslate() async {
+    final translator = GoogleTranslator();
+    translator
+        .translate(userinput,
+            from: languageCode[availableLang.indexOf(dropdownFrom)],
+            to: languageCode[availableLang.indexOf(dropdownTo)])
+        .then(print);
+    var translation = await translator.translate(userinput,
+        to: languageCode[availableLang.indexOf(dropdownTo)]);
+    setState(() {
+      result = translation.text;
+    });
+    // prints exemplo
+  }
+
 // Translate
   @override
   Widget build(BuildContext context) {
@@ -127,26 +140,38 @@ resultTranslate() async {
                       borderSide: BorderSide(color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(15)))),
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             MaterialButton(
-              height: 50,
-             color: Colors.blue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-                side: const BorderSide(color: Colors.blue,)
-              ),
-              child: const Text('Translate', style: TextStyle(color: Colors.white, fontSize: 20 )),
-              onPressed: (){
+                height: 50,
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: const BorderSide(
+                      color: Colors.blue,
+                    )),
+                child: const Text('Translate',
+                    style: TextStyle(color: Colors.white, fontSize: 20)),
+                onPressed: () {
                   resultTranslate();
-              }),
+                }),
 
-              // Result
-                const SizedBox(height: 10,),
-              Center(child: Text('Result: $result', style: const TextStyle(color: Colors.black, fontSize: 20 ))),
-         
-                const SizedBox(height: 100,),
-              const Center(child: Text('TamilanProject', style: TextStyle(color: Color.fromARGB(255, 33, 192, 2), fontSize: 20 ))),
+            // Result
+            const SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text('Result: $result',
+                    style: const TextStyle(color: Colors.black, fontSize: 20))),
 
+            const SizedBox(
+              height: 100,
+            ),
+            const Center(
+                child: Text('TamilanProject',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 33, 192, 2), fontSize: 20))),
           ],
         ),
       ),
